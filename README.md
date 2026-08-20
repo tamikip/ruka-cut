@@ -19,7 +19,7 @@
 
 ## 下载
 
-从 [Releases](https://github.com/tamikip/ruka-cut/releases) 下载最新压缩包。运行环境为 Windows 10/11 和 [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)。
+从 [Releases](https://github.com/tamikip/ruka-cut/releases) 下载 Setup 安装版或便携压缩包。运行环境为 Windows 10/11 和 [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)。
 
 ## 构建
 
@@ -39,7 +39,7 @@ Ruka Cut is an open-source, lightweight Windows app for recording system audio a
 - Instant Chinese / English switching
 - Minimal monochrome rounded UI with no accounts, ads, or telemetry
 
-Download the latest package from [Releases](https://github.com/tamikip/ruka-cut/releases). Windows 10/11 and the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) are required.
+Download the Setup installer or portable ZIP from [Releases](https://github.com/tamikip/ruka-cut/releases). Windows 10/11 and the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) are required.
 
 ## Contributing
 
