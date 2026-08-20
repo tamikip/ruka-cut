@@ -6,8 +6,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>RukaCut</AssemblyName>
+    <ApplicationIcon>..\..\assets\RukaCut.ico</ApplicationIcon>
     <RootNamespace>RukaCut</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Product>Ruka Cut</Product>
     <Authors>Ruka Cut contributors</Authors>
     <Description>Lightweight Windows system audio recorder and MP3 trimmer.</Description>

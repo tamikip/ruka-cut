@@ -1,4 +1,5 @@
 using NAudio.Wave;
+using System.Diagnostics;
 
 namespace RukaCut;
 
@@ -19,6 +20,16 @@ internal sealed class MainForm : Form
     private readonly Label timeLabel = NewLabel("00:00.0", 26, Color.White, FontStyle.Bold);
     private readonly Label fileLabel = NewLabel("", 9, Color.FromArgb(128, 128, 128));
     private readonly Label rangeLabel = NewLabel("00:00.0  —  00:00.0", 10, Color.FromArgb(205, 205, 205));
+    private readonly LinkLabel projectLink = new()
+    {
+        Font = new Font(UiFonts.FamilyName, 9),
+        ForeColor = Color.FromArgb(128, 128, 128),
+        LinkColor = Color.FromArgb(190, 190, 190),
+        ActiveLinkColor = Color.White,
+        VisitedLinkColor = Color.FromArgb(190, 190, 190),
+        BackColor = Color.Transparent,
+        LinkBehavior = LinkBehavior.HoverUnderline
+    };
     private readonly WaveformPanel waveform = new();
     private AppLanguage language = AppPreferences.LoadLanguage();
     private string statusKey = "Ready";
@@ -62,13 +73,15 @@ internal sealed class MainForm : Form
         previewButton.SetBounds(370, 216, 160, 48);
         saveButton.SetBounds(552, 216, 176, 48);
         editCard.Controls.AddRange([editTitle, openButton, fileLabel, waveform, rangeLabel, previewButton, saveButton]);
-        Controls.AddRange([recordCard, editCard]);
+        projectLink.SetBounds(32, 513, 500, 22);
+        Controls.AddRange([recordCard, editCard, projectLink]);
 
         recordButton.Click += ToggleRecording;
         openButton.Click += async (_, _) => await PickFileAsync();
         previewButton.Click += TogglePreview;
         saveButton.Click += SaveClip;
         languageButton.Click += (_, _) => ToggleLanguage();
+        projectLink.LinkClicked += (_, e) => { if (e.Link?.LinkData is string url) OpenProjectLink(url); };
         waveform.SelectionChanged += (_, _) => { preview.Stop(); UpdateRange(); };
         recorder.Stopped += RecordingStopped;
         preview.Stopped += PreviewStopped;
@@ -98,6 +111,9 @@ internal sealed class MainForm : Form
         saveButton.Text = T("Export");
         languageButton.Text = language == AppLanguage.Chinese ? "EN" : "中";
         waveform.EmptyText = T("EmptyWave");
+        projectLink.Text = $"{T("Author")}  ·  {T("SourceLink")}";
+        projectLink.Links.Clear();
+        projectLink.Links.Add(projectLink.Text.Length - T("SourceLink").Length, T("SourceLink").Length, "https://github.com/tamikip/ruka-cut");
         if (currentFile is null) fileLabel.Text = T("NoAudio");
     }
 
@@ -292,4 +308,6 @@ internal sealed class MainForm : Form
     };
 
     private static string Format(TimeSpan value) => $"{(int)value.TotalMinutes:00}:{value.Seconds:00}.{value.Milliseconds / 100}";
+
+    private static void OpenProjectLink(string url) => Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 }

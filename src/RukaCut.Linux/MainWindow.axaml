@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="RukaCut.Linux.MainWindow"
+        Title="Ruka Cut" Width="820" Height="560" CanResize="False" Background="#080808" Foreground="White"
+        Icon="/Assets/RukaCut.png" FontFamily="Microsoft YaHei UI, Noto Sans CJK SC, Inter">
+  <Window.Styles>
+    <Style Selector="Border.card"><Setter Property="Background" Value="#181818"/><Setter Property="CornerRadius" Value="18"/><Setter Property="Padding" Value="22"/></Style>
+    <Style Selector="Button"><Setter Property="CornerRadius" Value="12"/><Setter Property="FontWeight" Value="SemiBold"/><Setter Property="Padding" Value="20,10"/></Style>
+    <Style Selector="Button.primary"><Setter Property="Background" Value="White"/><Setter Property="Foreground" Value="Black"/></Style>
+    <Style Selector="Button.secondary"><Setter Property="Background" Value="#2A2A2A"/><Setter Property="Foreground" Value="White"/></Style>
+  </Window.Styles>
+  <Grid Margin="32,24" RowDefinitions="44,20,116,20,*,26">
+    <Grid ColumnDefinitions="*,Auto"><TextBlock Text="Ruka Cut" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/><Button x:Name="LanguageButton" Grid.Column="1" Classes="secondary" Content="EN" Click="ToggleLanguage"/></Grid>
+    <Border Grid.Row="2" Classes="card"><Grid ColumnDefinitions="*,170" RowDefinitions="Auto,*">
+      <TextBlock x:Name="RecordTitle" Text="录音" FontSize="17" FontWeight="Bold"/>
+      <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="26" VerticalAlignment="Center"><TextBlock x:Name="StatusText" Text="就绪" Foreground="#A0A0A0" Width="210"/><TextBlock x:Name="RecordTime" Text="00:00.0" FontSize="30" FontWeight="Bold"/></StackPanel>
+      <Button x:Name="RecordButton" Grid.Column="1" Grid.RowSpan="2" Classes="primary" Content="●  录音" Click="ToggleRecord"/>
+    </Grid></Border>
+    <Border Grid.Row="4" Classes="card"><Grid RowDefinitions="42,28,Auto,34,54" ColumnDefinitions="*,180">
+      <TextBlock x:Name="TrimTitle" Text="裁剪" FontSize="17" FontWeight="Bold" VerticalAlignment="Center"/><Button x:Name="OpenButton" Grid.Column="1" Classes="secondary" Content="打开" Click="OpenAudio"/>
+      <TextBlock x:Name="FileText" Grid.Row="1" Grid.ColumnSpan="2" Text="尚未选择音频" Foreground="#888"/>
+      <Grid Grid.Row="2" Grid.ColumnSpan="2" RowDefinitions="Auto,Auto" ColumnDefinitions="*,16,*"><Slider x:Name="StartSlider" Minimum="0" Maximum="1" ValueChanged="SelectionChanged"/><Slider x:Name="EndSlider" Grid.Column="2" Minimum="0" Maximum="1" Value="1" ValueChanged="SelectionChanged"/><TextBlock x:Name="StartText" Grid.Row="1" Text="00:00.0" Foreground="#CCC"/><TextBlock x:Name="EndText" Grid.Row="1" Grid.Column="2" Text="00:00.0" Foreground="#CCC" HorizontalAlignment="Right"/></Grid>
+      <TextBlock x:Name="HintText" Grid.Row="3" Grid.ColumnSpan="2" Text="左侧选择开始，右侧选择结束" Foreground="#777" VerticalAlignment="Center"/>
+      <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="16" HorizontalAlignment="Right"><Button x:Name="PreviewButton" Classes="secondary" Content="▶  试听" Click="Preview" IsEnabled="False" Width="160"/><Button x:Name="ExportButton" Classes="primary" Content="导出 MP3" Click="Export" IsEnabled="False" Width="176"/></StackPanel>
+    </Grid></Border>
+    <Button x:Name="ProjectLink" Grid.Row="5" Content="作者：TamikiP  ·  GitHub 开源" Background="Transparent" Foreground="#999" Padding="0" HorizontalAlignment="Left" Click="OpenProject"/>
+  </Grid>
+</Window>

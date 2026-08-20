@@ -1,5 +1,5 @@
 #ifndef AppVersion
-  #define AppVersion "1.0.1"
+  #define AppVersion "1.0.2"
 #endif
 
 #ifndef PublishDir
@@ -21,6 +21,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 UninstallDisplayIcon={app}\RukaCut.exe
 LicenseFile=..\LICENSE
+SetupIconFile=..\assets\RukaCut.ico
 OutputDir=..\release
 OutputBaseFilename=RukaCut-{#AppVersion}-Setup
 Compression=lzma2
@@ -50,8 +51,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#PublishDir}\*"; DestDir: "{app}"; Excludes: "*.pdb"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{group}\Ruka Cut"; Filename: "{app}\RukaCut.exe"
-Name: "{autodesktop}\Ruka Cut"; Filename: "{app}\RukaCut.exe"; Tasks: desktopicon
+Name: "{group}\Ruka Cut"; Filename: "{app}\RukaCut.exe"; IconFilename: "{app}\RukaCut.exe"
+Name: "{autodesktop}\Ruka Cut"; Filename: "{app}\RukaCut.exe"; IconFilename: "{app}\RukaCut.exe"; Tasks: desktopicon
 
 [Run]
 Filename: "{app}\RukaCut.exe"; Description: "{cm:LaunchProgram,Ruka Cut}"; Flags: nowait postinstall skipifsilent

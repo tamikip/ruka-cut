@@ -21,6 +21,8 @@
 
 从 [Releases](https://github.com/tamikip/ruka-cut/releases) 下载 Setup 安装版或便携压缩包。运行环境为 Windows 10/11 和 [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)。
 
+Linux GUI 版支持 x64 桌面，需要 .NET 8、FFmpeg，以及 PipeWire 的 PulseAudio 兼容层（`pactl`）。解压后运行 `./RukaCut`。
+
 ## 构建
 
 ```powershell
@@ -40,6 +42,8 @@ Ruka Cut is an open-source, lightweight Windows app for recording system audio a
 - Minimal monochrome rounded UI with no accounts, ads, or telemetry
 
 Download the Setup installer or portable ZIP from [Releases](https://github.com/tamikip/ruka-cut/releases). Windows 10/11 and the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) are required.
+
+The Linux x64 GUI requires .NET 8, FFmpeg, and the PipeWire PulseAudio compatibility layer (`pactl`). Extract the archive and run `./RukaCut`.
 
 ## Contributing
 

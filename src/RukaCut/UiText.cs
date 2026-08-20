@@ -14,7 +14,8 @@ public static class UiText
         ["ClipSaved"] = "裁剪已保存", ["OpenFailed"] = "打开失败", ["SaveFailed"] = "保存失败",
         ["PreviewFailed"] = "试听失败", ["CannotRecord"] = "无法开始录音：", ["OpenAudio"] = "打开音频",
         ["AudioFiles"] = "音频文件", ["Mp3Audio"] = "MP3 音频", ["WavAudio"] = "WAV 音频",
-        ["EmptyWave"] = "录制或打开音频", ["ClipSuffix"] = "裁剪"
+        ["EmptyWave"] = "录制或打开音频", ["ClipSuffix"] = "裁剪",
+        ["Author"] = "作者：TamikiP", ["SourceLink"] = "GitHub 开源"
     };
 
     private static readonly IReadOnlyDictionary<string, string> English = new Dictionary<string, string>
@@ -27,7 +28,8 @@ public static class UiText
         ["ClipSaved"] = "Clip saved", ["OpenFailed"] = "Open failed", ["SaveFailed"] = "Save failed",
         ["PreviewFailed"] = "Preview failed", ["CannotRecord"] = "Unable to start recording:", ["OpenAudio"] = "Open audio",
         ["AudioFiles"] = "Audio files", ["Mp3Audio"] = "MP3 audio", ["WavAudio"] = "WAV audio",
-        ["EmptyWave"] = "Record or open audio", ["ClipSuffix"] = "trimmed"
+        ["EmptyWave"] = "Record or open audio", ["ClipSuffix"] = "trimmed",
+        ["Author"] = "Author: TamikiP", ["SourceLink"] = "Open source on GitHub"
     };
 
     public static IReadOnlyCollection<string> MissingKeys => Chinese.Keys.Except(English.Keys).Concat(English.Keys.Except(Chinese.Keys)).ToArray();
