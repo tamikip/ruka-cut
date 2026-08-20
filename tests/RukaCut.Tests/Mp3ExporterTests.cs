@@ -9,6 +9,7 @@ public sealed class Mp3ExporterTests : IDisposable
 
     public Mp3ExporterTests() => Directory.CreateDirectory(directory);
 
+    [Trait("Category", "WindowsIntegration")]
     [Fact]
     public void ExportSegment_CreatesPlayableMp3NearRequestedDuration()
     {
@@ -23,6 +24,7 @@ public sealed class Mp3ExporterTests : IDisposable
         Assert.InRange(reader.TotalTime.TotalMilliseconds, 900, 1150);
     }
 
+    [Trait("Category", "WindowsIntegration")]
     [Fact]
     public void ExportSegment_RejectsInvalidRange()
     {

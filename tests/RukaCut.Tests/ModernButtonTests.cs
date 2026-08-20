@@ -5,6 +5,7 @@ namespace RukaCut.Tests;
 
 public sealed class ModernButtonTests
 {
+    [Trait("Category", "WindowsIntegration")]
     [Fact]
     public void DarkButton_PaintsBottomAndRightEdgesCleanly()
     {
