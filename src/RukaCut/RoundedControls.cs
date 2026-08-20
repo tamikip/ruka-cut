@@ -55,7 +55,7 @@ internal sealed class ModernButton : Button
         FlatAppearance.BorderSize = 0;
         BackColor = Color.White;
         ForeColor = Color.Black;
-        Font = new Font("Segoe UI", 10, FontStyle.Bold);
+        Font = new Font(UiFonts.FamilyName, 10, FontStyle.Bold);
         Cursor = Cursors.Hand;
         UseVisualStyleBackColor = false;
         Resize += (_, _) => UpdateRegion();

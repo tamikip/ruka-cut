@@ -36,7 +36,7 @@ internal sealed class MainForm : Form
         StartPosition = FormStartPosition.CenterScreen;
         BackColor = Color.FromArgb(8, 8, 8);
         ForeColor = Color.White;
-        Font = new Font("Segoe UI", 10);
+        Font = new Font(UiFonts.FamilyName, 10);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
 
@@ -288,7 +288,7 @@ internal sealed class MainForm : Form
 
     private static Label NewLabel(string text, float size, Color color, FontStyle style = FontStyle.Regular) => new()
     {
-        Text = text, Font = new Font("Segoe UI", size, style), ForeColor = color, BackColor = Color.Transparent
+        Text = text, Font = new Font(UiFonts.FamilyName, size, style), ForeColor = color, BackColor = Color.Transparent
     };
 
     private static string Format(TimeSpan value) => $"{(int)value.TotalMinutes:00}:{value.Seconds:00}.{value.Milliseconds / 100}";
