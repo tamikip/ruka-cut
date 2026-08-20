@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/RukaCut/RukaCut.csproj" />
+  <Project Path="tests/RukaCut.Tests/RukaCut.Tests.csproj" />
+</Solution>

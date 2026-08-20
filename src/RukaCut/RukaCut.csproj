@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>RukaCut</AssemblyName>
+    <RootNamespace>RukaCut</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>Ruka Cut</Product>
+    <Authors>Ruka Cut contributors</Authors>
+    <Description>Lightweight Windows system audio recorder and MP3 trimmer.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+</Project>
